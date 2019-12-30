@@ -11,3 +11,5 @@ Working:
 Not working:
   SELinux (it is permissive),
   Offline charging (because of SELinux)
+  
+  non-sending SMS (only on s3ve3gxx, s3ve3gjv)
