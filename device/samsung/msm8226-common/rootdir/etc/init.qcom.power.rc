@@ -99,8 +99,8 @@ on init
     write /dev/cpuset/camera-daemon/cpus 0-3
   
 on charger
-#    wait /dev/block/platform/msm_sdcc.1/by-name/system
-#    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro barrier=1 errors=panic
+    wait /dev/block/platform/msm_sdcc.1/by-name/system
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro barrier=1 errors=panic
     
     class_start charger
     write /sys/devices/system/cpu/cpu1/online 1
@@ -127,6 +127,10 @@ on charger
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "interactive"
+
+on fs
+    wait /dev/block/platform/${ro.boot.bootdevice}
+    symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice
 
 on property:sys.boot_completed=1
     setprop vendor.post_boot.parsed 1

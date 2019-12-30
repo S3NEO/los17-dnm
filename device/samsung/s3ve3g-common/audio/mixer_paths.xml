@@ -1700,12 +1700,6 @@
 
 	<!-- end of Factory Scenario -->
 
-	<path name="voice-rx">
-	</path>
-
-	<path name="voice-tx">
-	</path>
-
 	<path name="bt-sco-headset">
 	</path>
 
