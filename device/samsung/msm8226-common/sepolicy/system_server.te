@@ -15,3 +15,8 @@ allow system_server {
 }:file w_file_perms;
 
 allow system_server unlabeled:file unlink;
+
+#allow system_server proc:file getattr;
+# /proc/last_kmsg
+allow system_server proc_last_kmsg:file r_file_perms;
+allow system_server init:binder call;

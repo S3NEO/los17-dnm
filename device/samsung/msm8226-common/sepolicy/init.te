@@ -49,3 +49,10 @@ allow init {
     sysfs_sec_key
     sysfs_thermal
 }:file w_file_perms;
+
+allow init efs_file:dir { mounton };
+allow init firmware_file:filesystem getattr;
+allow init proc_last_kmsg:file { rw_file_perms setattr };
+allow init sysfs:file { open setattr write };
+allow init system_file:file execute_no_trans;
+allow init vendor_file:file execute_no_trans;
