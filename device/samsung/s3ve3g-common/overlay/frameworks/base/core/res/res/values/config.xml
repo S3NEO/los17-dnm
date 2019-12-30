@@ -290,4 +290,9 @@
          2 - The device DOES NOT have a permanent menu key; ignore autodetection. -->
     <integer name="config_overrideHasPermanentMenuKey">1</integer>
 
+    <!-- Certain sensor firmwares break with having a batch
+         size set. By setting this to false, devices can opt
+         out of setting a batch size, which fixes rotation. -->
+    <bool name="config_useDefaultBatchingForAccel">false</bool>
+
 </resources>
