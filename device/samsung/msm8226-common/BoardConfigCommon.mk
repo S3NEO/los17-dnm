@@ -98,7 +98,9 @@ DEVICE_MATRIX_FILE := device/samsung/msm8226-common/compatibility_matrix.xml
 TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
 
 # SELinux
-include device/samsung/msm8226-common/sepolicy/sepolicy.mk
+# But understand, that selinux is permissive, and this is first step to use enforcing selinux.
+include device/qcom/sepolicy-legacy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
